@@ -1,0 +1,51 @@
+HTML:
+<!doctype HTML>
+<html>
+	<head>
+		<title>codedamn HTML Playground</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body>
+		<h1>Counter : <span id='counter'>  0</span></h1>
+        <button id='incrementButton'>Increment</button>
+        <button id="decrementButton">Decrement</button>
+		
+
+		
+		<script src="https://bit.ly/codedamn-web-console"></script>
+		<script src="/script.js"></script>
+	</body>
+</html>
+
+CSS:
+body {
+	padding: 10px;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+		Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	line-height: 1.6;
+	font-size: 18px;
+}
+
+JS:
+
+let counter=0
+const incrementButtonElement=document.getElementById('incrementButton')
+const decrementButtonElement=document.getElementById('decrementButton')
+const counterElement=document.getElementById('counter')
+function incrementCounter()
+{
+    
+    counter+=1;
+    counterElement.innerText = counter
+}
+function decrementCounter()
+{
+    if(counter==0){return}
+    counter-=1;
+    counterElement.innerText = counter
+}
+incrementButtonElement.addEventListener('click',incrementCounter)
+decrementButtonElement.addEventListener('click',decrementCounter)
